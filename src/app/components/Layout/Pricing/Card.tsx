@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import check from '/public/icons/information/check.svg';
+import check from '/public/icons/Information/check.svg';
 
 function Card({
     plan,
