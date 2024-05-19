@@ -9,7 +9,7 @@ const Results = () => {
             <p className="font inter text-base md:text-lg text-[#3B3A40] mt-3">See how companies like yours have smashed their sales success goals</p>
             <ul className=''>
                 {cards.map((c) => (
-                   <Card card={c}></Card>
+                   <Card card={c} key={c.id}></Card>
                 ))}
             </ul>
         </section>
