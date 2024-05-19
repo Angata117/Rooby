@@ -61,8 +61,8 @@ const Plans = () => {
     <section className='flex flex-col justify-between py-5 md:py-10'>
       <div className='flex flex-col items-center xl:flex-row '>
         {plans.map((p, i) => (
-          <div className='w-auto mb-4 md:mb-0'>
-            <Card key={i} plan={p}></Card>
+          <div className='w-auto mb-4 md:mb-0' key={i}>
+            <Card plan={p}></Card>
           </div>
         ))}
       </div>

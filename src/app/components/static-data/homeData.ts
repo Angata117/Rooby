@@ -1,7 +1,7 @@
 import head from "/public/icons/benefits/head.svg";
 import laptop from "/public/icons/benefits/laptop.svg";
 import magicStick from "/public/icons/benefits/magicStick.svg";
-import increase from "/public/icons/information/increase.svg";
+import increase from "/public/icons/Information/increase.svg";
 import marketing from "/public/icons/information/marketing.svg";
 import plan from "/public/icons/information/plan.svg";
 import successProduct from "/public/icons/news/success-product.svg";
@@ -9,8 +9,8 @@ import employee from "/public/icons/news/employee.svg";
 import nellie from "/public/icons/results/nellie.svg";
 import lawrance from "/public/icons/results/lawrance.svg";
 import lola from "/public/icons/feedback/lola.svg";
-import daisy from "/public/icons/feedback/daisy.svg";
-import andrew from "/public/icons/feedback/andrew.svg";
+import daisy from "/public/icons/feedback/Daisy.svg";
+import andrew from "/public/icons/feedback/Andrew.svg";
 import { text } from "stream/consumers";
 const benefitsData = [
   {

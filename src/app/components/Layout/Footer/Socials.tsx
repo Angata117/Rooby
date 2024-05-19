@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Logo from "../../ui/logo";
 import facebook from '/public/icons/footer/Facebook.svg';
-import linkedIn from '/public/icons/footer/LinkedIn.svg';
+import linkedIn from '/public/icons/footer/Linkedin.svg';
 import twitter from '/public/icons/footer/Twitter.svg';
 
 const Socials = () => {
