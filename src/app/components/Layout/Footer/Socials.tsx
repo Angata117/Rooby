@@ -8,7 +8,7 @@ const Socials = () => {
     return (
         <section className="flex flex-col ">
             <div className="flex"><Logo ></Logo></div>
-            <p className="flex font-inter text-[14px] my-5 leading-[24px] w-[50%]">We built an elegant solution.
+            <p className="flex font-inter text-[14px] my-5 leading-[24px] w-full sm:w-[50%]">We built an elegant solution.
                 Our team created a fully integrated sales and marketing solution for SMBs</p>
             <div className='flex flex-row gap-3'>
                 <Image src={twitter} alt='twitter'></Image>

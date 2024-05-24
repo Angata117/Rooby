@@ -17,15 +17,15 @@ const Integrations = () => {
            
             <h1 className="font-inter
             text-3xl md:text-4xl lg:text-5xl font-bold leading-normal md:leading-[68px] tracking-[-0.67px]">Over 300+ integrations</h1>
-            <p className="font-inter text-base md:text-lg">Expand the capabilities of <span className="font-bold">Roooby</span> with hundreds of apps and integrations</p>
-            <div className='flex flex-wrap mt-16 gap-4 justify-center'>
-                <Logo src={star} className="md:col-span-1" />
-                <Logo src={hubspot} className="md:col-span-2" />
+            <p className="font-inter max-sm:w-[90%] text-base md:text-lg">Expand the capabilities of <span className="font-bold">Roooby</span> with hundreds of apps and integrations</p>
+            <div className='flex flex-wrap md:mt-16 gap-2 md:gap-4 max-md:w-full justify-center max-md:scale-75 max-md:flex-row'>
+                <Logo src={star} className="" />
+                <Logo src={hubspot} className="" />
                 <Logo src={zoom} />
-                <Logo src={meet} className="md:col-span-1" />
-                <Logo src={zendesk} className="md:col-span-2" />
+                <Logo src={meet} className="" />
+                <Logo src={zendesk} className="" />
                 <Logo src={intercom} />
-                <Logo src={box} className="md:col-span-1" />
+                <Logo src={box} className="m" />
                 <Logo src={slag} className="md:col-span-1" />
                 <Logo src={asana} />
                 <Logo src={teams} className="md:col-span-1" />

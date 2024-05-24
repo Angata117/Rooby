@@ -10,7 +10,7 @@ const Logo = ({
   return (
     <div>
         <Image src={src} alt="logo" 
-        className={`flex items-center justify-center rounded-xlbg-white ${className}`}></Image>
+        className={`flex items-center justify-center rounded-xl bg-white ${className}`}></Image>
     </div>
   )
 }

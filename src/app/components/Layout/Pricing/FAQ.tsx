@@ -41,31 +41,6 @@ export default function FAQ() {
     };
 
     return (
-        // <section className="container-custom mx-auto bg-white p-20" >
-        //     <h1 className="font-inter font-bold text-[64px] leading-[74px] tracking-tighterest w-[50%]">Frequently asked questions</h1>
-
-        //     <div className="flex flex-col w-[85%] justify-end ml-40 pt-10 ">
-        //         {cards.map((cards, index) => (
-        //             <div onClick={() => toggleAccordion(index)} key={index}
-        //                 className="flex flex-col border-t py-5 right-0">
-        //                 <div className="flex justify-between items-center cursor-pointer">
-        //                     <h1 className="font-inte text-[32px] leading-[42px] tracking-[-0.44px]">{cards.question}</h1>
-        //                     {openAccordion === index ? (
-        //                         <BsDash size={30} />
-        //                     ) : (
-        //                         <AiOutlinePlus size={30} />
-        //                     )}
-        //                 </div>
-        //                 <div className={`overflow-hidden transition-all duration-500 ${openAccordion === index ? "max-h-[500px]" : "max-h-0"}`}>
-        //                     <p className="font-inter text-[18px] leading-[28px] mt-5 ">
-        //                         {cards.answer}
-        //                     </p>
-        //                 </div>
-
-        //             </div>
-        //         ))}
-        //     </div>
-        // </section>
         <section className="container-custom mx-auto bg-white px-4 md:px-10 lg:px-20 py-10 lg:py-20" >
             <h1 className="font-inter font-bold text-3xl md:text-4xl lg:text-[64px] leading-tight md:leading-snug lg:leading-[74px] tracking-tighterest w-full md:w-3/4 lg:w-1/2">
                 Frequently asked questions
