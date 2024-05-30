@@ -15,7 +15,7 @@ export async function BlogDetails(props: Props) {
     let id = props.params.id;
     const blog = blogs[id - 1];
     if (!blog) {
-        return <div>Blog doesn&apost exist</div>;
+        return <div>No blog found</div>;
     }
     return (
 
