@@ -3,7 +3,7 @@ import LogoBar from "@/app/components/ui/LogoBar"
 
 const Hero = () => {
     return (
-        <section className="container-custom mx-auto px-4 lg:px-20 md:p-20 p-5 items-center">
+        <section className="container-custom mx-auto px-4 lg:px-20 md:p-20 p-5 items-center clip-path">
             <div className="flex flex-col md:flex-row">
             <div className="flex-1 flex flex-col space-y-6 m-4">
                 <h1 className="font-inter text-3xl lg:text-6xl font-bold text-dark-pink tracking-tighter">

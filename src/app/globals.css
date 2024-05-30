@@ -6,7 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  /* background-color: #F4F4F4; */
+  background-color: #F4F4F4;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,7 +16,10 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+.full-bleed{
+  box-sizing: 0 0 0 100vmax #FFFFFF;
+  clip-path: inset(0 -100vmax);
+}
 body {
   color: rgb(var(--foreground-rgb));
 

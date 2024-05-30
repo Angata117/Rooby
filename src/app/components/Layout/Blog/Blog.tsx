@@ -8,40 +8,13 @@ import { getPosts } from '../../lib/actions/posts';
 import Card from './Card';
 import PostCard from './PostCard'
 import Link from 'next/link'
+import BlogFilters from './BlogFilters'
 
-const filters = [
-    {
-        id: 1,
-        title: "All Articles",
-    },
-    {
-        id: 2,
-        title: "Sales",
-    },
-    {
-        id: 3,
-        title: "Marketing",
-    },
-    {
-        id: 4,
-        title: "Service",
-    },
-    {
-        id: 5,
-        title: "Product",
-    },
-    {
-        id: 6,
-        title: "News",
-    },
-]
 const Blog = () => {
-    const [selectedFilter, setSelectedFilter] = useState(1);
+
     const [posts, setPosts] = useState([] as JsonPlaceholder.Post[]);
     const [photos, setPhotos] = useState([] as JsonPlaceholder.Photo[]);
-    const handleFilterClick = (id: number) => {
-        setSelectedFilter(id);
-    };
+
 
     useEffect(() => {
         getPosts().then((data) => {
@@ -54,75 +27,67 @@ const Blog = () => {
     }, []);
 
     return (
-        <section className='container-custom mx-auto md:p-20 p-10 pb-0'>
-            <div className='px-10'>
-                <div className='flex flex-col md:flex-row justify-between items-baseline'>
-                    <h1 className='font-inter font-bold text-3xl md:text-5xl lg:text-[64px] leading-tight md:leading-snug lg:leading-[74px] tracking-tighterest w-full md:w-[50%]'>
-                        News and insights  <span className='text-[#787878]'>from our experts</span>
-                    </h1>
-                </div>
+        <section className='w-full '>
+            <BlogFilters></BlogFilters>
+            <div className='w-full  bg-white'>
+                <div className='container-custom mx-auto'>
 
-                <div className='flex flex-row gap-10 pt-20 '>
-                    {(filters.map((f) => (
-                        <p key={f.id}
-                            onClick={() => handleFilterClick(f.id)}
-                            className={`font-inter cursor-pointer font-medium text-lg pb-5 text-[#777777] 
-                        ${f.id === selectedFilter ? "border-b border-b-green-500 text-black font-semibold" : ""}`}>{f.title}</p>
-                    )))}
-                </div>
-            </div>
-
-            <div className=' flex flex-col justify-between bg-white  pt-20 p-10'>
-                <div className='flex flex-row font-inter gap-8'>
-                    <div className='flex flex-col pt-5 w-[50%] border-y-[1px] border-[#787878]'>
-                        <p className=' uppercase  font-bold tracking-[1.4px] text-[#787878] text-[14px]'>service</p>
-                        <h1 className='font-bold w-[90%] pt-5 text-[40px] leading-[50px] tracking-[-0.56px]'>
-                            The 2024 State of Marketing & Trends Report: Data from 1400+ Global Marketers
-                        </h1>
-                        <p className='flex bottom-0 mt-auto font-medium pb-5 text-[16px]'>
-                            05 Sep 2024, <span className='text-[#787878]'>by  Maxwell Iskiev</span>
-                        </p>
-                    </div>
-                    <div className='flex'>
-                        <Image src={clock} alt='clock'
-                            className='flex'></Image>
-                    </div>
-                </div>
-            </div>
-
-            <div className='grid grid-cols-3 gap-10 mt-10'>
-                {(blogs.map((b) => (
-                    <div key={b.id} 
-                        className={`${b.id === 7 ? "col-span-3 row-span-2" : ""}`}
-                    >
-                        {b.id === 7 && (
-
-                            <div className="flex flex-col justify-center items-center">
-
-                                <h1>Access Roooby leads features on your mobile</h1>
-                                <p className="flex items-center justify-start font-inter font-medium text-[16px]">
-                                    11 Aug 2023, <span className="text-text-gray"> by Joshua Nash</span></p>
+                    <div className=' flex flex-col max-md:items-center justify-between md:pt-20 p-10'>
+                        <Link href={`/blog/11`} className='flex flex-col md:flex-row font-inter gap-8'>
+                            <div className='flex flex-col max-sm:w-full w-[80%] pt-5 md:w-[50%] border-y-[1px] border-[#787878]'>
+                                <p className=' uppercase  font-bold tracking-[1.4px] text-[#787878] text-[14px]'>service</p>
+                                <h1 className='font-bold w-full  md:w-[90%] pt-5 md:text-3xl lg:text-[40px] lg:leading-[50px] lg:tracking-[-0.56px]'>
+                                    The 2024 State of Marketing & Trends Report: Data from 1400+ Global Marketers
+                                </h1>
+                                <p className='flex bottom-0 mt-auto font-medium pb-5 text-[16px]'>
+                                    05 Sep 2024, <span className='text-[#787878]'>by  Maxwell Iskiev</span>
+                                </p>
                             </div>
-                        )}
-                        <Card card={b} postId={b.id}/>
-
+                            <div className='flex'>
+                                <Image src={clock} alt='clock'
+                                    className='flex'></Image>
+                            </div>
+                        </Link>
                     </div>
 
-                )))}
+                    <div className='grid max-sm:mx-auto  max-sm:w-[90%] grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-10'>
+
+                        {(blogs.map((b) => (
+                            <div key={b.id}
+                                className={`${b.id === 7 ? "col-span-3 md:row-span-2 max-md:col-span-1" : ""}`}
+                            >
+                                {b.id === 7 && (
+
+                                    <div className="flex flex-col max-md:hidden justify-center items-center">
+
+                                        <h1>Access Roooby leads features on your mobile</h1>
+                                        <p className="flex items-center justify-start font-inter font-medium text-[16px]">
+                                            11 Aug 2023, <span className="text-text-gray"> by Joshua Nash</span></p>
+                                    </div>
+                                )}
+                                <Card card={b} postId={b.id} />
+
+                            </div>
+
+                        )))}
+
+
+
+                        {posts.map((post, i) => {
+                            const photo = photos?.[i];
+
+                            return (
+                                <Link key={post.id} className='' href={`/post/${post.id}`}>
+                                    <PostCard postImg={photo} post={post} />
+                                    {/* <Image src={photo.thumbnailUrl} alt={photo.title} className="py-5 border-t"></Image> */}
+                                </Link>
+                            )
+                        })}
+
+                    </div>
+                </div>
             </div>
 
-            <div className='grid grid-cols-3 gap-10 mt-10'>
-                {posts.map((post, i) => {
-                    const photo = photos?.[i];
-
-                    return (
-                        <Link key={post.id} className=''href={`/post/${post.id}`}>
-                            <PostCard postImg={photo} post={post}  />
-                            {/* <Image src={photo.thumbnailUrl} alt={photo.title} className="py-5 border-t"></Image> */}
-                        </Link>
-                    )
-                })}
-            </div>
         </section>
     )
 }

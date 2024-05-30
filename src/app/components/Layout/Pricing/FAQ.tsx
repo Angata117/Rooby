@@ -41,32 +41,34 @@ export default function FAQ() {
     };
 
     return (
-        <section className="container-custom mx-auto bg-white px-4 md:px-10 lg:px-20 py-10 lg:py-20" >
-            <h1 className="font-inter font-bold text-3xl md:text-4xl lg:text-[64px] leading-tight md:leading-snug lg:leading-[74px] tracking-tighterest w-full md:w-3/4 lg:w-1/2">
-                Frequently asked questions
-            </h1>
+        <section className="w-full bg-white">
+            <div className="container-custom mx-auto px-4 md:px-10 lg:px-20 py-10 lg:py-20" >
+                <h1 className="font-inter font-bold text-3xl md:text-4xl lg:text-[64px] leading-tight md:leading-snug lg:leading-[74px] tracking-tighterest w-full md:w-3/4 lg:w-1/2">
+                    Frequently asked questions
+                </h1>
 
-            <div className="flex flex-col w-full md:w-4/5 justify-end lg:ml-40 pt-10 ">
-                {cards.map((cards, index) => (
-                    <div onClick={() => toggleAccordion(index)} key={index}
-                        className="flex flex-col border-t py-5">
-                        <div className="flex justify-between items-center cursor-pointer px-2 md:px-4">
-                            <h2 className="font-inter text-xl md:text-2xl lg:text-[32px] leading-snug md:leading-relaxed lg:leading-[42px] tracking-[-0.44px]">
-                                {cards.question}
-                            </h2>
-                            {openAccordion === index ? (
-                                <BsDash size={30} />
-                            ) : (
-                                <AiOutlinePlus size={30} />
-                            )}
+                <div className="flex flex-col w-full md:w-4/5 justify-end lg:ml-40 pt-10 ">
+                    {cards.map((cards, index) => (
+                        <div onClick={() => toggleAccordion(index)} key={index}
+                            className="flex flex-col border-t py-5">
+                            <div className="flex justify-between items-center cursor-pointer px-2 md:px-4">
+                                <h2 className="font-inter text-xl md:text-2xl lg:text-[32px] leading-snug md:leading-relaxed lg:leading-[42px] tracking-[-0.44px]">
+                                    {cards.question}
+                                </h2>
+                                {openAccordion === index ? (
+                                    <BsDash size={30} />
+                                ) : (
+                                    <AiOutlinePlus size={30} />
+                                )}
+                            </div>
+                            <div className={`overflow-hidden transition-all duration-500 ${openAccordion === index ? "max-h-[500px]" : "max-h-0"}`}>
+                                <p className="font-inter text-sm md:text-base lg:text-[18px] leading-snug md:leading-relaxed lg:leading-[28px] mt-5 px-2 md:px-4">
+                                    {cards.answer}
+                                </p>
+                            </div>
                         </div>
-                        <div className={`overflow-hidden transition-all duration-500 ${openAccordion === index ? "max-h-[500px]" : "max-h-0"}`}>
-                            <p className="font-inter text-sm md:text-base lg:text-[18px] leading-snug md:leading-relaxed lg:leading-[28px] mt-5 px-2 md:px-4">
-                                {cards.answer}
-                            </p>
-                        </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </section>
 

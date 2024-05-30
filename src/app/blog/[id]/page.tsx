@@ -1,37 +1,42 @@
 // pages/blogs/[id].js
 import { getPostById } from '@/app/components/lib/actions/posts';
 import { blogs } from '@/app/components/static-data/blogData';
+import { getServerSideProps } from 'next/dist/build/templates/pages';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-type Params = {
+
+type Props = {
     params: {
-        postId: number;
+        id: number;
     }
 }
-export async function BlogDetails(props: Params) {
-    //     let post = await getPostById(id);
-    let id = props.params.postId;
-    const blog = blogs[id];
-    //   if (!post) {
-    //     return <div>Loading...</div>;
-    //   }
-    // const router = useRouter();
-    // const { id } = router.query; // Получаване на id от URL
-
-    // let post = await getPostById(Number(id));
-
-
-    // if (!blog) return <p>No blog found</p>
+export async function BlogDetails(props: Props) {
+    let id = props.params.id;
+    const blog = blogs[id - 1];
+    if (!blog) {
+        return <div>Blog doesn't exist</div>;
+    }
     return (
 
-        <div className="container mx-auto px-4 py-8">
-            <h1>asddd</h1>
-            <p className="flex font-inter text-[14px] font-bold uppercase text-text-gray">{blog.heading}</p>
-            {/* <h2 className="font-inter font-bold text-[18px] md:text-[24px] lg:text-[32px] leading-normal md:leading-[42px] tracking-[-0.44px]">{card.heading}</h2>
-            <p className="flex items-center justify-start font-inter font-medium text-[16px]">
-                {blog.date}<span className="text-text-gray"> {blog.author}</span></p> */}
+        <section className='bg-[#F4F4F4] w-full h-full'>
+            <div className="container mx-auto ">
+                <div className='md:px-20 md:pt-10 '>
+                    <div className='flex flex-col font-inter items-center  mx-auto  '>
+                        <p className="flex py-3 md:text-base text-[12px] font-bold uppercase text-text-gray">{blog.type}</p>
+                        <h2 className="flex py-5 w-[60%] max-sm:w-[90%] items-start font-bold text-[18px] border-t-2 md:text-[24px] 
+                        lg:text-5xl leading-normal lg:leading-[58px] tracking-normal lg:tracking-[-0.67px]">{blog.heading}</h2>
 
-        </div>
+                        <p className="flex font-medium text-sm md:text-lg">
+                            {blog.date}<span className="text-text-gray"> {blog.author}</span></p>
+                    </div>
+                    <div className='flex flex-wrap justify-center py-5 px-5 lg:mt-10'>
+                        <Image src={blog.icon} alt={blog.type}
+                            className='lg:w-[945px] lg:h-[511px]'></Image>
+                    </div>
+                </div>
+            </div>
+        </section>
     );
 };
 

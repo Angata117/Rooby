@@ -8,6 +8,7 @@ import blog7 from "/public/icons/blog/blog-7.svg";
 import blog8 from "/public/icons/blog/blog-8.svg";
 import blog9 from "/public/icons/blog/blog-9.svg";
 import blog10 from "/public/icons/blog/blog-10.svg";
+import clock from '/public/icons/blog/clock.svg'
 
 export const blogs = [
     {
@@ -89,5 +90,13 @@ export const blogs = [
         type: "service",
         date: "05 Sep 2024,",
         author: "by Joshua Nasl"
+    },
+    {
+        id: 11,
+        icon: clock,
+        heading: "The 2024 State of Marketing & Trends Report: Data from 1400+ Global Marketers",
+        type: "service",
+        date: "05 Sep 2024,",
+        author: "by Maxwell Iskiev"
     },
 ]
