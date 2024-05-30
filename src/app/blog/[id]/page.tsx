@@ -1,21 +1,16 @@
-// pages/blogs/[id].js
-import { getPostById } from '@/app/components/lib/actions/posts';
-import { blogs } from '@/app/components/static-data/blogData';
-import { getServerSideProps } from 'next/dist/build/templates/pages';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 
+import { blogs } from '@/app/components/static-data/blogData';
+import Image from 'next/image';
 type Props = {
     params: {
         id: number;
     }
 }
-export async function BlogDetails(props: Props) {
+export default async function BlogDetails(props: Props) {
     let id = props.params.id;
     const blog = blogs[id - 1];
     if (!blog) {
-        return <div>Blog doesn&apos;t exist</div>;
+        return <div>No blog found!</div>;
     }
     return (
 
@@ -39,5 +34,3 @@ export async function BlogDetails(props: Props) {
         </section>
     );
 };
-
-export default BlogDetails;
