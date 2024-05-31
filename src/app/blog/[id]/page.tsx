@@ -1,4 +1,3 @@
-
 import { blogs } from '@/app/components/static-data/blogData';
 import Image from 'next/image';
 type Props = {
@@ -6,7 +5,7 @@ type Props = {
         id: number;
     }
 }
-export default async function BlogDetails(props: Props) {
+function BlogDetails(props: Props) {
     let id = props.params.id;
     const blog = blogs[id - 1];
     if (!blog) {
@@ -34,3 +33,5 @@ export default async function BlogDetails(props: Props) {
         </section>
     );
 };
+
+export default BlogDetails;

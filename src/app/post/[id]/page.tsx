@@ -19,7 +19,7 @@ const date: string = dates[randDate]
 const authors: string[] = ["by  Maxwell Iskiev", "by Bill Holloway", "by Stephen Handerson", "by Joshua Nash"]
 const randAuthor: number = Math.floor(Math.random() * 4)
 const author: string = authors[randAuthor]
-export async function PostDetails(props: Props) {
+ async function PostDetails(props: Props) {
     const id = props.params.id;
 
     let post = await getPostById(id);
